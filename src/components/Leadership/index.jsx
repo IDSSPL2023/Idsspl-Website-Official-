@@ -5,7 +5,7 @@ import ContainerHeader from "../Common/ContainerHeader";
 import css from "./leadership.module.scss";
 
 import { motion } from "framer-motion";
-import { Amit_Linkdin } from "@/constants/socials";
+import { Vinayak_Linkdin } from "@/constants/socials";
 
 const containerVariants = {
   hidden: {},
@@ -65,16 +65,16 @@ const memberItem = {
 
 const Leadership = () => {
   const leadersData = [
-    // {
-    //   name: "Amit Malu",
-    //   role: "CEO & Director – Banking & Strategy",
-    //   img: "/images/Amit.png",
-    //   desc: [
-    //     "With more than 25 years of rich experience in Core Banking Systems (CBS) and the broader banking domain, Amit Malu leads the company’s strategic direction with a strong vision for innovation and growth. He brings deep industry expertise and a comprehensive understanding of banking technologies, regulatory frameworks, and digital transformation trends. ",
-    //     "Under his leadership, the company focuses on delivering secure, compliant, and scalable financial solutions tailored to modern banking needs. Amit is committed to building long-term client relationships, driving innovation in fintech, and positioning the organization as a trusted partner for financial institutions globally.",
-    //   ],
-    //   linkedin: `${Amit_Linkdin}`,
-    // },
+    {
+      name: "Vinayak More",
+      role: "CEO & Director – Banking & Strategy",
+      img: "/images/vinyak.png",
+      desc: [
+        "With more than 20 years of rich experience in Core Banking Systems (CBS) and the broader banking domain, Amit Malu leads the company’s strategic direction with a strong vision for innovation and growth. He brings deep industry expertise and a comprehensive understanding of banking technologies, regulatory frameworks, and digital transformation trends. ",
+        "Under his leadership, the company focuses on delivering secure, compliant, and scalable financial solutions tailored to modern banking needs. Amit is committed to building long-term client relationships, driving innovation in fintech, and positioning the organization as a trusted partner for financial institutions globally.",
+      ],
+      linkedin: `${Vinayak_Linkdin}`,
+    },
     {
       name: "Vishal Singh",
       role: "Director – Sales & Growth",
