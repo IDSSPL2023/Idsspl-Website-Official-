@@ -1,0 +1,313 @@
+@import "../../../styles/global";
+
+.benifitsForFinance {
+  @include container;
+
+  display: flex;
+  gap: 50px;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 80px;
+
+  will-change: transform, opacity;
+
+  // ── Shared content row ────────────────────────────────────────────────────
+  .content {
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+
+    @include for-size(tablet-phone) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    // ── Default colored list ───────────────────────────────────────────────
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        padding: 24px;
+
+        width: 432px;
+
+        border-radius: 20px;
+
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+
+        will-change: transform;
+
+        @include for-size(tablet-phone) {
+          width: 100%;
+          gap: 12px;
+        }
+
+        &:hover {
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h3 {
+          font-weight: 500;
+          font-size: 22px;
+          line-height: 24px;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 18px;
+          line-height: 24px;
+        }
+
+        &.yellow { background: #ffba6a; }
+        &.pink   { background: #d8d3ff; }
+        &.blue   { background: #6fe2ff; }
+      }
+    }
+
+    // ── Dark list (image-list / dark-list-image) ───────────────────────────
+    .darkList {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+
+      .darkItem {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        padding: 22px 24px;
+
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-left: 3px solid #00b4d8;
+        border-radius: 12px;
+
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease,
+          background 0.25s ease;
+
+        will-change: transform;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.07);
+          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        h3 {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #fff;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 22px;
+          color: rgba(255, 255, 255, 0.65);
+        }
+      }
+    }
+
+    // ── Shared figure ──────────────────────────────────────────────────────
+    .figure {
+      will-change: transform;
+      flex-shrink: 0;
+
+      @include for-size(tablet-phone) {
+        max-width: 352px;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  // ── Hub-spoke layout ──────────────────────────────────────────────────────
+  .hubSpoke {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+
+    @include for-size(tablet-phone) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+    }
+
+    .hubLeft {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .hubCenter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 240px;
+      min-height: 200px;
+      padding: 28px 24px;
+
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+
+      text-align: center;
+
+      p {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 26px;
+        color: #fff;
+      }
+
+      @include for-size(tablet-phone) {
+        width: 100%;
+        min-height: unset;
+        order: -1;
+      }
+    }
+
+    .hubRight {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .hubCard {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      padding: 20px 22px;
+
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-left: 3px solid #00b4d8;
+      border-radius: 12px;
+
+      max-width: 340px;
+      width: 100%;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+      will-change: transform;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.07);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      }
+
+      .hubNumber {
+        font-size: 13px;
+        font-weight: 600;
+        color: #00b4d8;
+        letter-spacing: 0.06em;
+      }
+
+      h3 {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #fff;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      @include for-size(tablet-phone) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  // ── Cards-row layout ──────────────────────────────────────────────────────
+  .cardsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+
+    @include for-size(tablet-phone) {
+      grid-template-columns: 1fr;
+    }
+
+    .rowCard {
+      display: flex;
+      flex-direction: column;
+
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+      will-change: transform;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.07);
+        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+      }
+
+      .rowCardImage {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .rowCardBody {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px 22px 24px;
+
+        h3 {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 22px;
+          color: #fff;
+        }
+
+        p {
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 22px;
+          color: rgba(255, 255, 255, 0.6);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,124 @@
+@import "../../../styles/global";
+
+.hero {
+  position: relative;
+  @include container;
+  margin-top: 50px;
+  will-change: transform, opacity;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include for-size(tablet-phone) {
+    flex-direction: column;
+    gap: 48px;
+  }
+  .content {
+    max-width: 626px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h1 {
+      font-weight: 600;
+      font-size: 32px;
+      color: $text_white;
+
+      span {
+        color: $primary;
+      }
+    }
+    p {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: $text_grey;
+    }
+
+    ul {
+      padding-left: 1.25rem;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      li {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: $text_grey;
+
+        &::marker {
+          color: $primary;
+        }
+      }
+    }
+
+    .buttons {
+      display: flex;
+      gap: 28px;
+
+      @include for-size(tablet-phone) {
+        flex-direction: column;
+        align-items: center;
+      }
+      .button1 {
+        @include btn_primary;
+      }
+      .button2 {
+        @include btn_secondary;
+      }
+    }
+  }
+
+  .figure{
+    @include for-size(tablet-phone) {
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+.gradient {
+  position: absolute;
+
+  /* Much larger than viewport */
+  width: 500px;
+  height: 764px;
+
+  /* Push it outside the screen */
+  top: -217px;
+  left: -39px;
+
+  pointer-events: none;
+  z-index: -1;
+
+  opacity: 0.9;
+  mix-blend-mode: plus-lighter;
+
+  /* Wide smooth circular fade */
+  background: radial-gradient(
+    circle at center,
+    rgba(35, 136, 255, 0.45) 0%,
+    rgba(35, 136, 255, 0.28) 25%,
+    rgba(35, 136, 255, 0.16) 45%,
+    rgba(35, 136, 255, 0.08) 60%,
+    rgba(35, 136, 255, 0.03) 75%,
+    transparent 90%
+  );
+
+  /* Smooth but performant blur */
+  filter: blur(120px);
+
+  will-change: transform, opacity;
+}
+
+.content,
+.figure {
+  will-change: transform, opacity;
+}
+
+.buttons button {
+  transition: transform 0.2s ease;
+}

@@ -1,0 +1,232 @@
+@import "../../../styles/global";
+
+.FAQContainer {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    /* Multiple backgrounds */
+    background-image: 
+      url("/images/FaqBg/bg1.svg"),
+      url("/images/FaqBg/bg2.svg");
+
+    background-repeat: no-repeat, no-repeat;
+
+    /* Left and Right positioning (space-between style) */
+    background-position: 
+      left center,
+      right center;
+
+    /* Optional sizing */
+    background-size: 
+      auto,
+      auto;
+
+    mask-image: radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 0%,
+      transparent 75%
+    );
+
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      black 0%,
+      black 0%,
+      transparent 75%
+    );
+
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.6;
+
+
+    @include for-size(tablet-phone) {
+  background-image: 
+    url("/images/FaqBg/bg1Mobile.svg"),
+    url("/images/FaqBg/bg2Mobile.svg");
+
+  background-position: 
+    left bottom,
+    right top;
+
+  /* optional but recommended */
+  background-repeat: no-repeat, no-repeat;
+
+  /* optional sizing control */
+  background-size: auto, auto;
+}
+  }
+}
+
+.faqBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $text_white;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.25);
+}
+
+.faqs {
+  @include container;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 80px;
+  margin-bottom: 48px;
+  align-items: center;
+  width: 100%;
+
+  @include for-size(tablet-phone) {
+    margin-top: 48px;
+    margin-bottom: 36px;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .faqList {
+    display: flex;
+    flex-direction: column;
+    gap: 33px;
+    width: 100%;
+    margin-top: 40px;
+
+    @include for-size(tablet-phone) {
+      gap: 12px;
+    }
+
+    li {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 20px;
+      border-radius: 12px;
+
+      @include for-size(tablet-phone) {
+        padding: 16px 14px;
+      }
+      background: linear-gradient(109.46deg, rgba(201, 201, 201, 0.08) 1.57%, rgba(196, 196, 196, 0.01) 100%);
+      backdrop-filter: blur(50px);
+
+
+
+      h3 {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        cursor: pointer;
+        text-align: left;
+        user-select: none;
+      -webkit-user-select: none; // Safari / iOS
+      -moz-user-select: none; // Firefox
+      -ms-user-select: none; // IE/Edge
+      -webkit-tap-highlight-color: transparent; // removes grey highlight on mobile
+
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 1.35;
+        letter-spacing: 0%;
+        text-transform: capitalize;
+        color: $text_white;
+
+        @include for-size(tablet-phone) {
+          align-items: flex-start;
+          font-size: 16px;
+          line-height: 1.45;
+        }
+
+        figure {
+          flex-shrink: 0;
+          margin: 0;
+          height: 24px;
+          width: 24px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .rotated {
+          transform: rotate(45deg);
+        }
+      }
+
+      p {
+        font-weight: 450;
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: none;
+        color: $text_grey;
+
+        @include for-size(tablet-phone) {
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+    }
+  }
+
+  .stillHaveQuestions {
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    color: $text_white;
+
+    @include for-size(tablet-phone) {
+      width: 100%;
+      font-size: 15px;
+    }
+
+    a {
+      color: $primary;
+    }
+  }
+}
+
+.bookDemo {
+  @include btn_primary;
+  margin-top: 30px;
+  box-sizing: border-box;
+
+  @include for-size(tablet-phone) {
+    width: 100%;
+    max-width: none;
+    align-self: stretch;
+    margin-top: 16px;
+    padding: 16px 20px;
+    text-transform: uppercase;
+  }
+}
+
+.faqList li {
+  transition: background 0.3s ease, transform 0.2s ease;
+
+  will-change: transform;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.icon {
+  transition: transform 0.25s ease;
+}
+
+.faqList li p {
+  overflow: hidden;
+}

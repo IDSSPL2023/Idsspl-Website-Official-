@@ -1,0 +1,75 @@
+@import '../../../styles/global';
+
+.bottomSheet {
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  overflow: hidden;
+  z-index: 21;
+
+  @include for-size(big-tablet-up) {
+    align-items: flex-start;
+    padding: 80px 16px;
+  }
+
+  @include for-size(big-tablet-down) {
+    align-items: flex-end;
+  }
+
+  .bottomSheetWrapper {
+    background-color: #12223A;
+    position: relative;
+    width: 100%;
+
+    @include for-size(big-tablet-up) {
+      border-radius: 12px;
+      max-width: 412px;
+      padding: 32px;
+      animation-name: slideIn;
+      animation-duration: 0.7s;
+    }
+
+    @include for-size(big-tablet-down) {
+      animation-name: slideInPhone;
+      animation-duration: 0.7s;
+      border-radius: 20px 20px 0px 0px;
+      padding: 20px
+    }
+  }
+
+  .popupTop{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    text-align: right;
+
+    span{
+      cursor: pointer;
+    }
+  }
+}
+
+@keyframes slideInPhone {
+    from {
+        transform: translateY(100%);
+    }
+    
+    to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-80px);
+    }
+    
+    to {
+        transform: translateY(0px);
+    }
+}

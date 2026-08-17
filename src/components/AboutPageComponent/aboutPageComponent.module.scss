@@ -1,0 +1,172 @@
+@import "../../styles/global";
+
+.main {
+  @include container;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  box-sizing: border-box;
+  
+  /* ---------------- HERO ---------------- */
+  
+  .hero {
+    display: flex;
+    align-items: center;
+    gap: 91px;
+    justify-content: center;
+
+    /* animation readiness */
+    will-change: transform, opacity;
+
+    .heroBadge {
+      display: none;
+
+      /* smooth appearance */
+      transition: all 0.3s ease;
+    }
+
+    .heroFigure {
+      margin: 0;
+      flex-shrink: 0;
+
+      /* performance */
+      will-change: transform;
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+
+        /* smooth image motion */
+        transition:
+          transform 0.6s ease,
+          filter 0.6s ease;
+
+        backface-visibility: hidden;
+      }
+
+      /* premium hover polish */
+      &:hover img {
+        transform: scale(1.04);
+        filter: brightness(1.05);
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 604px;
+
+      will-change: transform, opacity;
+
+      .heroTitle {
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 32px;
+        color: $text_white;
+        margin: 0;
+
+        transition: color 0.3s ease;
+
+        span {
+          color: $primary;
+
+          transition: color 0.3s ease;
+        }
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: $text_grey;
+        margin: 0;
+
+        transition: opacity 0.3s ease;
+      }
+
+      .heroLeadMore {
+        display: block;
+      }
+    }
+  }
+
+  /* ---------------- MOBILE / TABLET ---------------- */
+
+  @include for-size(tablet-phone) {
+    .hero {
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      margin-top: 48px;
+      text-align: center;
+
+      .heroBadge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 8px 20px;
+        border-radius: 999px;
+
+        font-weight: 600;
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+
+        color: $text_white;
+
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(0, 212, 255, 0.35);
+
+        order: -1;
+
+        /* subtle motion */
+        transition:
+          transform 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+
+      .heroFigure {
+        width: 100%;
+        max-width: 520px;
+
+        img {
+          width: 100%;
+
+          max-height: min(48vh, 380px);
+
+          object-fit: contain;
+
+          transition: transform 0.6s ease;
+        }
+      }
+
+      .content {
+        max-width: 100%;
+        text-align: center;
+        gap: 14px;
+
+        .heroTitle {
+          font-size: clamp(22px, 5vw, 28px);
+          line-height: 1.25;
+        }
+
+        p {
+          font-size: 15px;
+          line-height: 1.65;
+          letter-spacing: 0.01em;
+
+          color: #a0aec0;
+
+          text-align: left;
+        }
+
+        .heroLeadMore {
+          margin-top: 4px;
+        }
+      }
+    }
+  }
+}

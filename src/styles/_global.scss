@@ -1,0 +1,152 @@
+@import "./viewport.scss";
+
+// Color Variables
+$white: #ffffff !default;
+$black: #000000 !default;
+$primary: #00D4FF !default;
+$grey: #bebebe !default;
+
+// Text Color
+$text_white: #f5f5f5 !default;
+$text_light: #E6E6E6 !default;
+$text_dark: #0f1415 !default;
+$secondary-text: $white !default;
+$text_grey: #E2E2E2 !default;
+$text_grey_light: #7C7C7D !default;
+
+$transparent: transparent;
+
+// Mixin Container
+@mixin container {
+  width: 100%;
+  max-width: 1392px;
+  margin: 0 auto;
+  padding: 0 16px;
+  @include for-size(tablet-phone) {
+    padding: 0 16px;
+  }
+  @include for-size(phone-only) {
+    padding: 0 20px;
+  }
+}
+
+// Mixin BTN
+@mixin btn_primary {
+  all: unset;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 16px;
+  background-color: $primary;
+  padding: 20px 27px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #030F1E;
+
+  transition: all 0.25s ease;
+
+  &:hover {
+    transform: translateY(-2px); // slight lift
+    filter: brightness(1.05);   // subtle glow
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  }
+
+  &:active {
+    transform: translateY(0); // press effect
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// Mixin BTN
+@mixin btn_secondary {
+  all: unset;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 16px;
+  background: #FFFFFF1A;
+  padding: 20px 27px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $text_white;
+
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px); // optional glass feel
+
+  &:hover {
+    background: #ffffff2a; // slightly brighter glass
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.08);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+// Mixin BTN Tertiary
+@mixin btn_tertiary {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9.45px;
+  cursor: pointer;
+
+  //   width: 96.24px;
+  width: fit-content;
+  height: 37.8px;
+  padding: 0 15.12px;
+
+  border: none;
+  border-radius: 946.47px;
+
+  background: linear-gradient(
+      0deg,
+      var(--surface-secondary, #212a2b),
+      var(--surface-secondary, #212a2b)
+    ),
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+  // Layered shadows
+  box-shadow: 0px 0.95px 0.95px 0px #ffffff33 inset,
+    0px 5.67px 11.34px 0px #ffffff0a inset, 0px 0.95px 1.89px 0px #00000033,
+    0px 3.78px 3.78px 0px #00000014;
+
+  color: $text_white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  transition: all 0.25s ease;
+
+  // Hover & Active States
+  &:hover {
+    filter: brightness(1.1);
+  }
+
+  &:active {
+    transform: scale(0.97);
+    filter: brightness(0.9);
+  }
+
+  // For icon alignment (if needed)
+  svg,
+  img {
+    height: 18px;
+    width: 18px;
+  }
+}

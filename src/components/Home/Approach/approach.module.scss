@@ -1,0 +1,58 @@
+@import "../../../styles/global";
+
+.aproachWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.approach {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  margin-top: 80px;
+
+  @include for-size(tablet-phone) {
+    margin-top: 56px;
+  }
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.media {
+  width: 100%;
+  max-width: 1200px;
+
+  height: auto;
+
+  overflow: hidden;
+
+  // background: rgba(255, 255, 255, 0.04);
+
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    // background: #06101e;
+
+  video {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  picture{
+    img{
+      width: 100%;
+    }
+  }
+}

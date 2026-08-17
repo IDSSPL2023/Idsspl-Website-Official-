@@ -1,0 +1,84 @@
+@import "../../../styles/global";
+
+.benifit {
+  @include container;
+  margin-top: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  will-change: transform, opacity;
+
+  .benifitList {
+    margin-top: 50px;
+    display: flex;
+    gap: 24px;
+
+    @include for-size(tablet-phone) {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .benifitItem {
+      width: 300px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+
+      padding: 20px;
+      border-radius: 16px;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+      will-change: transform;
+
+      @include for-size(tablet-phone) {
+        width: 100%;
+      }
+
+      &:hover {
+        box-shadow:
+          0 10px 30px rgba(0, 0, 0, 0.25);
+      }
+
+      .icon {
+        width: 56px;
+        height: 56px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        will-change: transform;
+
+        img {
+          width: 100%;
+          height: auto;
+
+          transition: transform 0.3s ease;
+        }
+      }
+
+      h3 {
+        font-weight: 600;
+        font-size: 24px;
+        color: $text_white;
+
+        transition: color 0.3s ease;
+      }
+
+      p {
+        font-weight: 400;
+        font-size: 18px;
+        color: $text_grey;
+
+        line-height: 1.6;
+      }
+    }
+  }
+}

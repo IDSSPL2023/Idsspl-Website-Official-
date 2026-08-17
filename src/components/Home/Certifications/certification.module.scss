@@ -1,0 +1,79 @@
+@import "../../../styles/global";
+
+.certificateContainer {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .certificate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    padding: 40px;
+    border-radius: 24px; // your radius
+
+    background: linear-gradient(
+      98.42deg,
+      rgba(201, 201, 201, 0.24) 0.4%,
+      rgba(196, 196, 196, 0.03) 99.96%
+    );
+
+    /* Gradient Border */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      padding: 2.4px; // border thickness
+      border-radius: inherit;
+
+      background: linear-gradient(
+        96.28deg,
+        #00d4ff 1.96%,
+        rgba(240, 240, 240, 0.4) 10.94%,
+        rgba(240, 240, 240, 0.4) 24.19%,
+        rgba(240, 240, 240, 0.4) 41.22%,
+        rgba(240, 240, 240, 0.4) 57.77%,
+        rgba(240, 240, 240, 0.4) 71.01%,
+        rgba(240, 240, 240, 0.4) 81.42%,
+        rgba(240, 240, 240, 0.4) 89.93%,
+        #00d4ff 100.34%
+      );
+
+      /* This creates the hollow center */
+      -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+
+      pointer-events: none;
+    }
+
+    h3 {
+      font-weight: 600;
+      font-size: 40px;
+      text-align: center;
+      color: $text_white;
+    }
+
+    .certificateList {
+      display: flex;
+      gap: 20px;
+
+      figure {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @include for-size(tablet-phone) {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+}

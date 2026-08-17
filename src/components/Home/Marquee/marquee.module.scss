@@ -1,0 +1,97 @@
+@import "../../../styles/global";
+
+.container {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  gap: 50px;
+
+  @include for-size(tablet-phone) {
+    margin-top: 60px;
+  }
+}
+
+.marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    transparent 100%
+  );
+
+  &:hover .track {
+    animation-play-state: paused;
+  }
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+  padding: 10px 0;
+
+  @include for-size(tablet-phone) {
+    gap: 12px;
+    animation-duration: 30s;
+  }
+
+  @include for-size(phone-only) {
+    gap: 8px;
+  }
+}
+
+.item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 120px;
+    width: auto;
+    opacity: 0.85;
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+  }
+  @include for-size(tablet-phone) {
+    img {
+      height: 100px;
+    }
+  }
+
+  @include for-size(phone-only) {
+    img {
+      height: 72px;
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

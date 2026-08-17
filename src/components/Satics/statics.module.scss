@@ -1,0 +1,63 @@
+@import '../../styles/global';
+
+.main {
+  @include container;
+  padding: 60px 20px;
+  max-width: 900px;
+
+  color: $text_white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+
+  .back {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  p {
+    line-height: 1.7;
+  }
+
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+
+  ul {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    li {
+      list-style: disc;
+    }
+  }
+
+  .meta {
+    font-weight: 500;
+  }
+}

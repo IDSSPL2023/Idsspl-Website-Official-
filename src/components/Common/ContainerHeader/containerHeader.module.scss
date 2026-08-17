@@ -1,0 +1,53 @@
+@import "../../../styles/global";
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 875px;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 0 4px;
+  box-sizing: border-box;
+
+  h2 {
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 40px;
+    line-height: 1.15;
+    text-align: center;
+    color: $text_white;
+
+    @include for-size(tablet-phone) {
+      font-size: 28px;
+    }
+
+    @include for-size(phone-only) {
+      font-size: 24px;
+    }
+
+    span {
+      color: $primary;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.45;
+    text-align: center;
+    color: $text_white;
+
+    @include for-size(tablet-phone) {
+      font-size: 18px;
+    }
+
+    @include for-size(phone-only) {
+      font-size: 16px;
+    }
+  }
+}
+
+

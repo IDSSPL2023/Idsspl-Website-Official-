@@ -1,0 +1,241 @@
+@import "../../../styles/global";
+
+.footer {
+  margin-top: 225px;
+  position: relative;
+  background-color: #12141d;
+
+  @include for-size(big-tablet-down) {
+    margin-top: 300px;
+  }
+}
+
+.footerMain {
+  padding: 80px 40px;
+  background-color: #12141d;
+
+  @include for-size(big-tablet-down) {
+    padding: 80px 0 20px 0;
+  }
+
+  .brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include for-size(tablet-phone) {
+      gap: 32px;
+    }
+    .brandInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      font-weight: 600;
+      font-size: 16px;
+      color: $text_white;
+
+      h2 {
+        font-weight: 800;
+        font-size: 32px;
+      }
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: $text_grey;
+        max-width: 300px;
+      }
+    }
+
+    .socials {
+      display: flex;
+      gap: 12px;
+    }
+  }
+
+  @include for-size(tablet-phone) {
+    margin-top: 60px;
+    .bottom {
+      flex-direction: column-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      .links {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+.container {
+        margin-top: 50px;
+  padding: 80px 40px;
+  display: flex;
+  justify-content: space-between;
+
+  @include for-size(big-tablet-down) {
+    // padding: 80px 0;
+    margin-top: 100px;
+        gap: 18px;
+  }
+
+  @include for-size(tablet-phone) {
+    flex-direction: column;
+    gap: 24px;
+    padding: 20px 16px;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    h4 {
+      font-weight: 600;
+      font-size: 16px;
+      color: $text_white;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      li {
+        max-width: 380px;
+        font-size: 14px;
+        color: #fff3ef;
+        transition: all 0.5s ease;
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+
+    .newsText {
+      max-width: 380px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      color: #fff3ef;
+    }
+
+    .newsForm {
+      display: flex;
+      input {
+        height: 56px !important;
+        all: unset;
+        border-radius: 14px 0 0 14px;
+        background-color: #fff3ef;
+        padding: 0 16px;
+        @include for-size(tablet-phone) {
+          width: -webkit-fill-available;
+        }
+      }
+
+      button {
+        @include btn_primary;
+        border-radius: 0 14px 14px 0;
+        max-width: 135px;
+        text-transform: none;
+        &:hover {
+          transform: none;
+        }
+      }
+
+      @include for-size(tablet-phone) {
+        button {
+          padding: 0;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  .contactWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .contact {
+    display: flex;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff3ef;
+  }
+}
+
+.divider {
+  border: 1px solid #8a8a8a;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 4%;
+  text-align: center;
+  color: $text_white;
+}
+
+.footerTop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.readyToGetStarted {
+  position: absolute;
+  margin: 0;
+  max-width: 1240px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: #13294b;
+  border-radius: 8px;
+  padding: 50px 20px;
+
+  @include for-size(tablet-phone) {
+    width: unset;
+    margin: 0 10px;
+   }
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: $text_white;
+    h2 {
+      font-weight: 700;
+      font-size: 40px;
+      text-align: center;
+    }
+    p {
+      font-weight: 400;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  .ctaButton {
+    @include btn_primary;
+    text-transform: none;
+  }
+}

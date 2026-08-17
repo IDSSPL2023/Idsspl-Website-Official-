@@ -1,0 +1,159 @@
+@import "../../../styles/global";
+
+.testimonials {
+  @include container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  margin-top: 100px;
+  width: 100%;
+
+  @include for-size(tablet-phone) {
+    margin-top: 56px;
+  }
+
+  .swiperContainer {
+    width: 100%;
+    max-width: 100%;
+    padding-bottom: 40px;
+
+    :global(.swiper) {
+      padding-bottom: 48px !important;
+      overflow: visible;
+    }
+
+    :global(.swiper-pagination) {
+      bottom: 0 !important;
+    }
+
+    :global(.swiper-slide) {
+      height: auto;
+    }
+  }
+}
+
+.swiperCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  will-change: transform;
+
+  &:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  @include for-size(tablet-phone) {
+    padding: 18px 16px;
+    gap: 18px;
+  }
+    width: 100%;         // ✅ fill the slide
+  max-width: unset;
+  background: linear-gradient(
+    180deg,
+    rgba(43, 255, 255, 0.1) 0%,
+    rgba(43, 255, 255, 0.02) 50%,
+    rgba(43, 255, 255, 0.06) 100%
+  );
+  overflow: hidden; // important
+
+  // 🔥 animated border layer
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 1.5px; // border thickness
+    border-radius: 16px;
+
+    background: linear-gradient(
+      180deg,
+      rgba(0, 212, 255, 0.32),
+      rgba(0, 212, 255, 0.1),
+      #00d4ff
+    );
+
+    background-size: 200% 200%;
+    animation: swirlBorder 4s linear infinite;
+
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: $text_white;
+
+    @include for-size(tablet-phone) {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .swiperCardFooter {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+
+    img {
+      height: 70px;
+      width: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+
+      @include for-size(tablet-phone) {
+        height: 56px;
+        width: 56px;
+      }
+    }
+
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      min-width: 0;
+
+      h4 {
+        font-weight: 600;
+        font-size: 20px;
+        color: $text_white;
+
+        @include for-size(tablet-phone) {
+          font-size: 17px;
+        }
+      }
+
+      span {
+        font-weight: 400;
+        font-size: 18px;
+        color: $text_grey;
+
+        @include for-size(tablet-phone) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes swirlBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
