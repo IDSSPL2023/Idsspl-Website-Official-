@@ -28,7 +28,7 @@ const contactData = [
     icon: <MapPin size={22} strokeWidth={2} aria-hidden />,
     title: "Office Corporate Address: ",
     value:
-      "IDSSPL Technologies Pvt. Ltd. 616, Corporate Avenue Sonawala Road, Opposite Atlanta Centre Goregaon (E), Mumbai Suburban Maharashtra, India - 400063",
+      "IDSSPL Technologies Pvt. Ltd. Office No. 406, De Elmas, Next to Ginger Hotel, Sonawala Lane, Avenue Sonawala Road, Goregaon (E), Mumbai Suburban Maharashtra, India - 400063",
   },
 ];
 
