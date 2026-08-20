@@ -70,8 +70,8 @@ const Leadership = () => {
       role: " Associate Director & CEO – Banking & Strategy",
       img: "/images/vinyak.png",
       desc: [
-        "Vinayak More is the Associate Director & CEO – Banking Technology & Strategy at IDSSPL, bringing over 25 years of experience in banking technology and financial services. ",
-        "With deep expertise across Core Banking, Digital Banking, UPI Issuing & Acquiring, ATM, POS, AePS, Merchant Management, and Digital Payments, he leads IDSSPL’s strategy to deliver secure, scalable, compliant, and future-ready banking solutions.",
+        "Banking Technology & Strategy at IDSSPL, bringing over 25 years of experience in banking technology and financial services. ",
+        "With deep expertise across *Core Banking, Digital Banking, UPI Issuing & Acquiring, ATM, POS, AePS, Merchant Management, and Digital Payments, he leads IDSSPL’s strategy to deliver secure, scalable, compliant, and future-ready banking solutions.",
         "His vision is to position IDSSPL as a trusted technology and business-growth partner for banks and financial institutions, driving digital transformation, innovation, transaction growth, and long-term business value.",
       ],
       linkedin: `${Vinayak_Linkdin}`,
